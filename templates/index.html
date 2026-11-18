@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ficha de evaluación de cliente</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+
+  <header class="cabecera">
+    <div class="marca">
+      <svg class="marca__sello" id="sello" viewBox="-100 -100 200 200" aria-hidden="true"></svg>
+      <span class="marca__nombre">Banca Minorista</span>
+    </div>
+    <p class="cabecera__nota">Modelo de predicción de abandono</p>
+  </header>
+
+  <main class="lienzo">
+
+    <section class="intro">
+      <h1>Ficha de evaluación de cliente</h1>
+      <p>Rellena los datos del expediente del cliente. Al evaluar, se preparan con el formato y los tipos que espera el modelo.</p>
+    </section>
+
+    <form id="form-cliente" class="ficha" novalidate>
+
+      <!-- PERFIL -->
+      <fieldset class="bloque">
+        <legend>Perfil <span class="bloque__nota">Datos personales</span></legend>
+        <div class="rejilla">
+
+          <div class="campo" data-campo="id_cliente">
+            <label for="id_cliente">ID de cliente</label>
+            <div class="entrada">
+              <input type="text" id="id_cliente" name="id_cliente" maxlength="8" placeholder="CLI-1001"
+                     autocomplete="off" spellcheck="false" required aria-describedby="id_cliente-error">
+            </div>
+            <p class="error" id="id_cliente-error"></p>
+          </div>
+
+          <div class="campo" data-campo="edad">
+            <label for="edad">Edad</label>
+            <div class="entrada">
+              <input type="number" id="edad" name="edad" min="18" max="120" step="1"
+                     inputmode="numeric" placeholder="40" required aria-describedby="edad-error">
+              <span class="unidad">años</span>
+            </div>
+            <p class="error" id="edad-error"></p>
+          </div>
+
+          <fieldset class="campo campo--ancho" data-campo="nivel_estudios">
+            <legend class="etiqueta">Nivel de estudios</legend>
+            <div class="opciones">
+              <label class="opcion"><input type="radio" name="nivel_estudios" value="Primaria"><span>Primaria</span></label>
+              <label class="opcion"><input type="radio" name="nivel_estudios" value="Secundaria"><span>Secundaria</span></label>
+              <label class="opcion"><input type="radio" name="nivel_estudios" value="Grado"><span>Grado</span></label>
+              <label class="opcion"><input type="radio" name="nivel_estudios" value="Master"><span>Máster</span></label>
+              <label class="opcion"><input type="radio" name="nivel_estudios" value="Doctorado"><span>Doctorado</span></label>
+            </div>
+            <p class="error" id="nivel_estudios-error"></p>
+          </fieldset>
+
+        </div>
+      </fieldset>
+
+      <!-- SITUACIÓN ECONÓMICA -->
+      <fieldset class="bloque">
+        <legend>Situación económica <span class="bloque__nota">Importes en euros</span></legend>
+        <div class="rejilla">
+
+          <div class="campo" data-campo="ingresos_anuales">
+            <label for="ingresos_anuales">Ingresos anuales</label>
+            <div class="entrada">
+              <input type="number" id="ingresos_anuales" name="ingresos_anuales" min="0" step="0.01"
+                     inputmode="decimal" placeholder="28500" required aria-describedby="ingresos_anuales-error">
+              <span class="unidad">€ / año</span>
+            </div>
+            <p class="error" id="ingresos_anuales-error"></p>
+          </div>
+
+          <div class="campo" data-campo="saldo_cuenta">
+            <label for="saldo_cuenta">Saldo en cuenta</label>
+            <div class="entrada">
+              <input type="number" id="saldo_cuenta" name="saldo_cuenta" min="0" step="0.01"
+                     inputmode="decimal" placeholder="7500" required aria-describedby="saldo_cuenta-error">
+              <span class="unidad">€</span>
+            </div>
+            <p class="error" id="saldo_cuenta-error"></p>
+          </div>
+
+        </div>
+      </fieldset>
+
+      <!-- RELACIÓN CON EL BANCO -->
+      <fieldset class="bloque">
+        <legend>Relación con el banco <span class="bloque__nota">Productos y hábitos</span></legend>
+        <div class="rejilla">
+
+          <div class="campo" data-campo="antiguedad_meses">
+            <label for="antiguedad_meses">Antigüedad como cliente</label>
+            <div class="entrada">
+              <input type="number" id="antiguedad_meses" name="antiguedad_meses" min="0" step="1"
+                     inputmode="numeric" placeholder="60" required aria-describedby="antiguedad_meses-error">
+              <span class="unidad">meses</span>
+            </div>
+            <p class="error" id="antiguedad_meses-error"></p>
+          </div>
+
+          <fieldset class="campo" data-campo="num_productos">
+            <legend class="etiqueta">Productos contratados</legend>
+            <div class="segmentos">
+              <label class="opcion"><input type="radio" name="num_productos" value="1"><span>1</span></label>
+              <label class="opcion"><input type="radio" name="num_productos" value="2"><span>2</span></label>
+              <label class="opcion"><input type="radio" name="num_productos" value="3"><span>3</span></label>
+              <label class="opcion"><input type="radio" name="num_productos" value="4"><span>4</span></label>
+            </div>
+            <p class="error" id="num_productos-error"></p>
+          </fieldset>
+
+          <fieldset class="campo" data-campo="tipo_cuenta">
+            <legend class="etiqueta">Tipo de cuenta</legend>
+            <div class="opciones">
+              <label class="opcion"><input type="radio" name="tipo_cuenta" value="Corriente"><span>Corriente</span></label>
+              <label class="opcion"><input type="radio" name="tipo_cuenta" value="Ahorro"><span>Ahorro</span></label>
+              <label class="opcion"><input type="radio" name="tipo_cuenta" value="Nomina"><span>Nómina</span></label>
+              <label class="opcion"><input type="radio" name="tipo_cuenta" value="Inversion"><span>Inversión</span></label>
+            </div>
+            <p class="error" id="tipo_cuenta-error"></p>
+          </fieldset>
+
+          <fieldset class="campo" data-campo="tiene_tarjeta">
+            <legend class="etiqueta">¿Tiene tarjeta?</legend>
+            <div class="segmentos">
+              <label class="opcion"><input type="radio" name="tiene_tarjeta" value="1"><span>Sí</span></label>
+              <label class="opcion"><input type="radio" name="tiene_tarjeta" value="0"><span>No</span></label>
+            </div>
+            <p class="error" id="tiene_tarjeta-error"></p>
+          </fieldset>
+
+          <fieldset class="campo campo--ancho" data-campo="canal_preferido">
+            <legend class="etiqueta">Canal preferido</legend>
+            <div class="opciones">
+              <label class="opcion"><input type="radio" name="canal_preferido" value="App Movil"><span>App móvil</span></label>
+              <label class="opcion"><input type="radio" name="canal_preferido" value="Web"><span>Web</span></label>
+              <label class="opcion"><input type="radio" name="canal_preferido" value="Oficina"><span>Oficina</span></label>
+              <label class="opcion"><input type="radio" name="canal_preferido" value="Telefono"><span>Teléfono</span></label>
+              <label class="opcion"><input type="radio" name="canal_preferido" value="Cajero Antiguo"><span>Cajero antiguo</span></label>
+            </div>
+            <p class="error" id="canal_preferido-error"></p>
+          </fieldset>
+
+          <fieldset class="campo campo--ancho" data-campo="nivel_satisfaccion">
+            <legend class="etiqueta">Nivel de satisfacción</legend>
+            <div class="escala">
+              <label class="opcion"><input type="radio" name="nivel_satisfaccion" value="Muy Bajo"><span><i class="nivel" style="--n:1" aria-hidden="true"></i>Muy bajo</span></label>
+              <label class="opcion"><input type="radio" name="nivel_satisfaccion" value="Bajo"><span><i class="nivel" style="--n:2" aria-hidden="true"></i>Bajo</span></label>
+              <label class="opcion"><input type="radio" name="nivel_satisfaccion" value="Medio"><span><i class="nivel" style="--n:3" aria-hidden="true"></i>Medio</span></label>
+              <label class="opcion"><input type="radio" name="nivel_satisfaccion" value="Alto"><span><i class="nivel" style="--n:4" aria-hidden="true"></i>Alto</span></label>
+              <label class="opcion"><input type="radio" name="nivel_satisfaccion" value="Muy Alto"><span><i class="nivel" style="--n:5" aria-hidden="true"></i>Muy alto</span></label>
+            </div>
+            <p class="error" id="nivel_satisfaccion-error"></p>
+          </fieldset>
+
+        </div>
+      </fieldset>
+
+      <div class="acciones">
+        <button type="button" class="boton boton--texto" id="btn-ejemplo">Cargar cliente de ejemplo</button>
+        <button type="reset" class="boton boton--secundario">Vaciar ficha</button>
+        <button type="submit" class="boton boton--principal" id="btn-evaluar">Evaluar cliente</button>
+      </div>
+    </form>
+
+    <aside class="comprobante" aria-labelledby="titulo-resumen">
+      <div class="comprobante__rosa">
+        <svg id="rosa" viewBox="-100 -100 200 200" aria-hidden="true"></svg>
+        <p class="medallon"><strong id="progreso-num">0</strong> de 11 campos</p>
+      </div>
+
+      <h2 id="titulo-resumen">Resumen del cliente</h2>
+      <p class="comprobante__nota">Variables que calculará el modelo a partir de la ficha.</p>
+
+      <dl class="resumen">
+        <div><dt>Grupo de edad</dt><dd id="r-grupo">—</dd></div>
+        <div><dt>Antigüedad</dt><dd id="r-anios">—</dd></div>
+        <div><dt>Saldo / ingresos</dt><dd id="r-ratio">—</dd></div>
+        <div><dt>Saldo por producto</dt><dd id="r-producto">—</dd></div>
+      </dl>
+
+      <div class="veredicto" id="veredicto" hidden></div>
+
+      <details class="datos" id="bloque-json">
+        <summary>Datos para el modelo</summary>
+        <pre id="json-salida">{}</pre>
+        <button type="button" class="boton boton--claro" id="btn-copiar">Copiar JSON</button>
+      </details>
+
+      <p class="estado" id="estado" role="status" aria-live="polite"></p>
+    </aside>
+
+  </main>
+
+  <script src="/static/js/app.js"></script>
+</body>
+</html>
