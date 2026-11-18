@@ -2,15 +2,15 @@
 
 Aplicación web que predice si un cliente del banco **abandonará o no** a partir de sus datos. Usa un modelo **KNN (K vecinos más cercanos)** entrenado con un dataframe de clientes.
 
-## 🚀 Demo en línea
+##  Demo en línea
 
 La web está desplegada en **Render**:
 
-👉 **[Abrir la aplicación](https://apicliente-esek.onrender.com/)**
+ **[Abrir la aplicación](https://apicliente-esek.onrender.com/)**
 
 Basta con entrar al enlace para usar la interfaz: rellenar los campos del cliente y obtener la predicción.
 
-## 🖥️ Cómo se usa
+##  Cómo se usa
 
 1. Rellena los campos del formulario con los datos del cliente.
 2. Pulsa el botón **Evaluar cliente**.
@@ -32,20 +32,20 @@ Es decir, `CLI-` seguido de 4 números.
 
 Para hacer una prueba rápida, pulsa **Cargar cliente de ejemplo**: se rellenan todos los campos automáticamente y ya puedes pulsar **Evaluar cliente**.
 
-## 📄 Documentación de la API
+##  Documentación de la API
 
 En la ruta **`/docs`** está la documentación interactiva de la API (Swagger), desde donde también se pueden probar las peticiones directamente.
 
 ![Documentación interactiva en /docs](docs.png)
 
-## 🧰 Tecnologías
+##  Tecnologías
 
 - **Python** con **FastAPI** y **Uvicorn** para la API
 - **scikit-learn** (KNN y `ColumnTransformer`), **pandas** y **joblib** para el modelo
 - **HTML**, **CSS** y **JavaScript** para la interfaz
 - **Render** para el despliegue
 
-## 💻 Ejecutar en local
+##  Ejecutar en local
 
 ```bash
 python -m venv .venv
