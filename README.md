@@ -6,7 +6,7 @@ Aplicación web que predice si un cliente del banco **abandonará o no** a parti
 
 La web está desplegada en **Render**:
 
-👉 **[Abrir la aplicación](ENLACE_A_RENDER)**
+👉 **[Abrir la aplicación](https://apicliente-esek.onrender.com/)**
 
 Basta con entrar al enlace para usar la interfaz: rellenar los campos del cliente y obtener la predicción.
 
