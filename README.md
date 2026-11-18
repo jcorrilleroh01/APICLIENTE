@@ -16,7 +16,7 @@ Basta con entrar al enlace para usar la interfaz: rellenar los campos del client
 2. Pulsa el botón **Evaluar cliente**.
 3. La web muestra si el cliente **abandonará o no** y la **probabilidad de abandono** en porcentaje.
 
-![Interfaz de la aplicación](Interfaz.gif)
+![Interfaz de la aplicación](interfaz.gif)
 
 ### Formato de los datos
 
@@ -36,7 +36,7 @@ Para hacer una prueba rápida, pulsa **Cargar cliente de ejemplo**: se rellenan 
 
 En la ruta **`/docs`** está la documentación interactiva de la API (Swagger), desde donde también se pueden probar las peticiones directamente.
 
-![Documentación interactiva en /docs](Docs.png)
+![Documentación interactiva en /docs](docs.png)
 
 ## 🧰 Tecnologías
 
