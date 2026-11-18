@@ -6,10 +6,10 @@ from pydantic import BaseModel, Field
 
 class ClienteInput(BaseModel):
     id_cliente: str = Field(..., pattern=r"^CLI-\d{4}$")
-    edad: int = Field( ge=18, le=120, description="Edad del cliente en años")
-    ingresos_anuales: float = Field( gt=0, description="Ingresos anuales en euros")
+    edad: int = Field( ge=18, le=120, description="Edad del cliente")
+    ingresos_anuales: float = Field( gt=0, description="Ingresos anuales")
     antiguedad_meses: int = Field( ge=0, description="Meses como cliente")
-    saldo_cuenta: float = Field( ge=0, description="Saldo actual en euros")
+    saldo_cuenta: float = Field( ge=0, description="Saldo actual")
     nivel_estudios: Literal["Primaria", "Secundaria", "Grado", "Master", "Doctorado"]
     tipo_cuenta: Literal["Corriente", "Ahorro", "Nomina", "Inversion"]
     nivel_satisfaccion: Literal["Muy Bajo", "Bajo", "Medio", "Alto", "Muy Alto"]
